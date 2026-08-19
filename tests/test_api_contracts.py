@@ -215,6 +215,10 @@ class ApiContractTests(unittest.TestCase):
         initialize_app.assert_called_once()
         certificate.assert_called_once()
         self.assertEqual(certificate.call_args[0][0]["project_id"], "demo-project")
+        self.assertEqual(
+            certificate.call_args[0][0]["token_uri"],
+            "https://oauth2.googleapis.com/token",
+        )
         firestore_client.assert_called_once()
 
 

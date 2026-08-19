@@ -35,6 +35,7 @@ class FirebaseClient:
                 "private_key": private_key,
                 "client_email": settings.FIREBASE_CLIENT_EMAIL,
                 "client_id": settings.FIREBASE_CLIENT_ID,
+                "token_uri": "https://oauth2.googleapis.com/token",  # nosec B105
             }
             cred = credentials.Certificate(firebase_cred)
         else:
